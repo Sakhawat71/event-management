@@ -20,16 +20,27 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">daisyUI</a>
+
+                <a className="btn btn-ghost text-xl">
+                    <figure>
+                        <img className="w-6" src="/src/assets/event.png" alt="" />
+                    </figure>
+                    Dream Events
+                </a>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="gap-2 font-semibold text-xl menu menu-horizontal px-1">
                     {
                         links
                     }
                 </ul>
             </div>
             <div className="navbar-end">
+                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                    <div className="w-10 rounded-full">
+                        <img alt="Tailwind CSS Navbar component" src="" />
+                    </div>
+                </label>
                 <a className="btn">Button</a>
             </div>
         </div>

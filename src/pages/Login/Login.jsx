@@ -1,10 +1,25 @@
 
+import { useContext } from "react";
 import { Link,  } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 
 const Login = () => {
 
+    const {logInWihtEmailPass} = useContext(AuthContext)
+
+    const handelLogIn = e =>{
+        e.preventDefault() 
+        
+        const form = new FormData(e.currentTarget);
+        const email = form.get('email');
+        const password = form.get('password');
+
+        logInWihtEmailPass(email,password)
+            .then()
+            .catch()
+    }
 
 
     return (
@@ -17,7 +32,7 @@ const Login = () => {
 
 
                 <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
-                    <form className="card-body lg:w-[400px]">
+                    <form onSubmit={handelLogIn} className="card-body lg:w-[400px]">
 
                         <div className="form-control">
                             <label className="label">
