@@ -1,0 +1,65 @@
+[{
+        "id": 1,
+        "name": "Eternal Bliss Wedding",
+        "image": "https://i.ibb.co/chcyzJJ/weddings.jpg",
+        "price": "$10,000",
+        "shortDescription": "Create unforgettable memories with our exquisite wedding planning services.",
+        "fullDescription": "Eternal Bliss Wedding offers a seamless and enchanting experience to make your special day truly unforgettable. Our team of expert wedding planners is dedicated to bringing your dream wedding to life, ensuring every detail is meticulously curated to reflect your unique love story. From the grand entrance to the farewell, we orchestrate every moment with precision and elegance.\n\nImmerse yourself in a world of romance, surrounded by lush floral arrangements, exquisite decor, and the magical ambiance that only a carefully crafted wedding can provide. Whether you envision a glamorous ballroom affair, a charming garden ceremony, or a destination wedding, we tailor our services to match your desires and preferences.\n\nOur packages include comprehensive event planning, venue selection, catering, floral design, and coordination of all wedding-day logistics. We believe in creating not just an event but a captivating experience that resonates with your personal style. Our commitment to excellence ensures that you can relax and savor each moment, knowing that every aspect of your wedding is in capable hands.\n\nLet Eternal Bliss Wedding turn your vision into a reality, where every nuance speaks of love and joy. Your journey towards eternal bliss begins here. Contact us today to embark on the enchanting adventure of planning your dream wedding. We invite you to celebrate your love in a setting that mirrors the depth and beauty of your relationship, creating memories that will last a lifetime."
+    },
+    {
+        "id": 2,
+        "name": "Joyful Birthday Bash",
+        "image": "https://i.ibb.co/kqfpySb/birthday.jpg",
+        "price": "$1,500",
+        "shortDescription": "Celebrate another year of life with a fantastic birthday party tailored just for you.",
+        "fullDescription": "Joyful Birthday Bash is your ticket to a fantastic celebration, tailored just for you. Whether you're marking a milestone or just want to gather your favorite people for a day of joy, our team is here to ensure your birthday is nothing short of extraordinary. With creative themes, delicious treats, and exciting entertainment, we make every birthday a joyful and memorable occasion. Let us handle the details while you focus on enjoying the festivities. Explore our packages and let the celebration begin!"
+    },
+    {
+        "id": 3,
+        "name": "Timeless Love Anniversary",
+        "image": "https://i.ibb.co/9TsbSPb/anniversaries.jpg",
+        "price": "$5,000",
+        "shortDescription": "Commemorate years of love and commitment with a beautifully curated anniversary celebration.",
+        "fullDescription": "Timeless Love Anniversary is your partner in commemorating years of love and commitment. Let us create a beautifully curated anniversary celebration that reflects the journey you've shared. From intimate dinners to grand parties, we tailor our services to make your anniversary a truly timeless event. Our experienced team pays attention to every detail, ensuring a celebration that mirrors the depth of your love. Discover the perfect anniversary package for you and relish the joy of a love that stands the test of time."
+    },
+    {
+        "id": 4,
+        "name": "Sparkling Engagement Soiree",
+        "image": "https://i.ibb.co/CPg0G5B/engagement.jpg",
+        "price": "$2,500",
+        "shortDescription": "Begin your journey to forever with an elegant engagement party filled with love and joy.",
+        "fullDescription": "Sparkling Engagement Soiree is your gateway to forever. Begin your journey with an elegant engagement party filled with love and joy. Our team specializes in creating enchanting settings where love blossoms. From intimate gatherings to grand affairs, we bring your vision to life. Our engagement packages include everything you need for a memorable celebration, from venue selection to decor and entertainment. Let us make your engagement a sparkling prelude to a lifetime of love. Explore our packages and start your journey to forever with style and grace."
+    },
+    {
+        "id": 5,
+        "name": "Retirement Elegance",
+        "image": "https://i.ibb.co/9vm9Bjf/retirement.jpg",
+        "price": "$3,000",
+        "shortDescription": "Bid farewell to a successful career with a memorable retirement party for your loved one.",
+        "fullDescription": "Retirement Elegance is here to help you bid farewell to a successful career with a memorable retirement party for your loved one. Celebrate achievements, share stories, and embark on a new chapter in style. Our team ensures every detail reflects the honor and elegance your retiree deserves. From venue selection to decor and catering, we take care of everything, allowing you to focus on enjoying this significant milestone. Plan a retirement party that captures the essence of a distinguished career. Explore our packages and give your retiree the send-off they deserve."
+    },
+    {
+        "id": 6,
+        "name": "Bundle of Joy Baby Shower",
+        "image": "https://i.ibb.co/tqctXY0/baby-shower.jpg",
+        "price": "$1,200",
+        "shortDescription": "Celebrate the upcoming arrival of your little one with a heartwarming baby shower.",
+        "fullDescription": "Bundle of Joy Baby Shower is dedicated to celebrating the upcoming arrival of your little one with heartwarming joy. From adorable themes to charming decor, we curate a baby shower that captures the excitement and love surrounding this special moment in your life. Our packages include everything you need for a delightful baby shower, from venue selection to decor, catering, and games. Let us create a memorable event that brings together friends and family to shower your baby with love. Explore our packages and start planning a baby shower filled with joy and anticipation."
+    },
+    {
+        "id": 7,
+        "name": "Harmony Family Reunion",
+        "image": "https://i.ibb.co/tL4NS6K/family.jpg",
+        "price": "$4,000",
+        "shortDescription": "Bring your family together for a joyous reunion filled with laughter and memories.",
+        "fullDescription": "Harmony Family Reunion is your partner in bringing your family together for a joyous reunion. Create lasting memories filled with laughter and heartfelt moments. From planning activities to coordinating logistics, our team ensures your family reunion is a harmonious and unforgettable experience. Whether you're celebrating milestones or simply want to reconnect, we tailor our services to make your family reunion a joyous occasion. Explore our packages and start planning a reunion that brings smiles, laughter, and cherished memories."
+    },
+    {
+        "id": 8,
+        "name": "Creative Arts Showcase",
+        "image": "https://i.ibb.co/hFKLgrP/arts.jpg",
+        "price": "$2,800",
+        "shortDescription": "Immerse yourself in an artistic extravaganza with our curated arts event.",
+        "fullDescription": "Creative Arts Showcase invites you to immerse yourself in an artistic extravaganza. Discover a world of creativity with our curated arts event. From visual arts to live performances, we showcase the talents of artists in a vibrant and engaging atmosphere. Join us for an unforgettable celebration of artistry. Our packages include everything you need for a captivating arts event, from venue selection to artist coordination and multimedia presentations. Explore our packages and let us bring your vision of an artistic showcase to life."
+    }
+]
