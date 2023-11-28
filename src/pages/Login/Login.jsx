@@ -2,7 +2,7 @@
 import { useContext, useState } from "react";
 import { Link, } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash,  } from "react-icons/fa";
 
 
 
@@ -34,7 +34,7 @@ const Login = () => {
 
 
                 <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
-                    <form onSubmit={handelLogIn} className="card-body pb-2 lg:w-[400px]">
+                    <form onSubmit={handelLogIn} className="card-body  lg:w-[400px]">
 
                         <div className="form-control">
                             <label className="label">
@@ -79,15 +79,12 @@ const Login = () => {
                             <button className="btn btn-primary">Login</button>
                         </div>
 
-                        <p >Don`t have an account? <Link to="/register">
-                            <button className="btn btn-sm ml-1">Register</button>
+                        <p className="font-semibold text-center">Don`t have an account? <Link to="/register">
+                            <button className="btn btn-sm ml-1 text-blue-700">Register</button>
                         </Link> </p>
 
                     </form>
 
-                    <div className="text-center p-2 mb-2 mx-auto">
-                        <Link className="btn">Sign with <FaGoogle className="text-blue-700"/></Link>
-                    </div>
                 </div>
             </div>
         </div>

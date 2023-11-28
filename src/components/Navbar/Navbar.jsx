@@ -1,7 +1,22 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import userlogo from "../../assets/user.png";
+import swal from 'sweetalert';
 
 const Navbar = () => {
 
+    const { user,logOut } = useContext(AuthContext)
+
+    const handelLogOut =()=>{
+        logOut()
+        .then(() =>{
+            swal("Good job!", "Log Out!", "success");
+        })
+        .catch((error) =>{
+            console.error(error)
+        })
+    }
 
     const links = <>
         <li>
@@ -10,7 +25,7 @@ const Navbar = () => {
                 to="/"
             >Home</NavLink>
         </li>
-        
+
         <li>
             <NavLink
                 className={({ isActive, isPending }) => isActive ? 'text-blue-600' : isPending ? 'text-black' : ''}
@@ -45,11 +60,11 @@ const Navbar = () => {
                     </ul>
                 </div>
 
-                <Link to="/" className="btn text-[#00c1a2] btn-ghost text-xl">
+                <Link to="/" className=" btn text-[#00c1a2] btn-ghost text-xl">
                     <figure>
-                        <img className="w-6" src="/src/assets/event.png" alt="" />
+                        <img className="w-6 " src="/event.png" alt="" />
                     </figure>
-                    Dream Events
+                    <span className="hidden md:flex">Dream Events</span>
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
@@ -59,13 +74,32 @@ const Navbar = () => {
                     }
                 </ul>
             </div>
+
             <div className="navbar-end">
+                <div>
+                    <p className="w-full">{user?.displayName}</p>
+                </div>
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
-                        <img alt="Tailwind CSS Navbar component" src="" />
+                        <Link to="/profile"><img alt='user' src={ user ? user.photoURL : userlogo } /></Link>
                     </div>
                 </label>
-                <Link className="btn">Button</Link>
+                {
+                    user ?
+                        <button
+                        onClick={handelLogOut}
+                        className="btn"
+                        >LogOut</button>
+                        :
+                        <Link 
+                        to="/login"
+                        >
+                            <button className="btn">
+                                LogIn
+                            </button>
+                        </Link>
+                    }
+
             </div>
         </div>
     );
