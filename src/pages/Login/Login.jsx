@@ -1,22 +1,24 @@
 
-import { useContext } from "react";
-import { Link,  } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 
 const Login = () => {
+    const [showPassword, setShowPassword] = useState(false);
 
-    const {logInWihtEmailPass} = useContext(AuthContext)
+    const { logInWihtEmailPass } = useContext(AuthContext)
 
-    const handelLogIn = e =>{
-        e.preventDefault() 
-        
+    const handelLogIn = e => {
+        e.preventDefault()
+
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
 
-        logInWihtEmailPass(email,password)
+        logInWihtEmailPass(email, password)
             .then()
             .catch()
     }
@@ -47,16 +49,23 @@ const Login = () => {
                         </div>
 
 
-                        <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
                             <input
-                                type="password"
+                                type={showPassword ? "text" : "password"}
                                 name="password"
                                 placeholder="Password"
                                 className="input input-bordered"
                                 required />
+                            <span
+                                onClick={() => setShowPassword(!showPassword)}
+                                className="absolute top-12 right-4 text-xl">
+                                {
+                                    showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                }
+                            </span>
 
                             <label className="label">
                                 <Link

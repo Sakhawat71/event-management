@@ -1,11 +1,12 @@
 
 import { Link } from "react-router-dom";
-
+import { FaEye, FaEyeSlash } from "react-icons/fa"
+import { useState } from "react";
 
 
 
 const Register = () => {
-
+    const [showPassword, setShowPassword] = useState(false);
 
 
 
@@ -18,7 +19,7 @@ const Register = () => {
 
 
                 <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
-                    <form  className="card-body lg:w-[450px]">
+                    <form className="card-body lg:w-[450px]">
 
                         <div className="form-control">
                             <label className="label">
@@ -56,17 +57,22 @@ const Register = () => {
                         </div>
 
 
-                        <div className="form-control">
+                        <div className="form-control relative">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
                             <input
-                                type="password"
+                                type={showPassword ? "text" : "password"}
                                 name="password"
                                 placeholder="Password"
-                                className="input input-bordered"
+                                className="input input-bordered "
                                 required />
 
+                            <span
+                                onClick={() => setShowPassword(!showPassword)} className="absolute top-12 right-6 text-xl"
+                            >{
+                                    showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                }</span>
                             <div className="flex justify-center items-center mt-2">
                                 <input
                                     type="checkbox"

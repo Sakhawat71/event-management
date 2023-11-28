@@ -3,6 +3,7 @@ import Root from "../components/Root/Root";
 import Home from "../components/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import EventDatails from "../pages/EventDatails/EventDatails";
 
 const Router = createBrowserRouter([
     {
@@ -22,6 +23,10 @@ const Router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/event/:id',
+                element: <EventDatails></EventDatails>
             }
         ]
     }

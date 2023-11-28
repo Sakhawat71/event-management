@@ -8,7 +8,6 @@ const Home = () => {
 
     const allEvents = useLoaderData()
 
-
     return (
         <div>
             <Slider></Slider>
