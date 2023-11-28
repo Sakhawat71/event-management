@@ -1,13 +1,28 @@
 
 import { Link } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa"
-import { useState } from "react";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa"
+import { useContext, useState } from "react";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
-    
+    const { googleSignIn,user } = useContext(AuthContext);
+    console.log(user)
+
+    const signWithGoogle = () => {
+        googleSignIn()
+            .then((result) => {
+                const user = result.user;
+                console.log(user)
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.error(errorCode,errorMessage)
+            })
+    }
 
 
     return (
@@ -17,6 +32,9 @@ const Register = () => {
                     <h1 className="text-5xl font-bold">Register now!</h1>
                 </div>
 
+                <div className="text-center p-2 mb-2 mx-auto">
+                    <Link onClick={signWithGoogle} className="btn">Sign with <FaGoogle className="text-blue-700" /></Link>
+                </div>
 
                 <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
                     <form className="card-body lg:w-[450px]">

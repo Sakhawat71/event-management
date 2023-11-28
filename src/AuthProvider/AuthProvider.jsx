@@ -10,7 +10,7 @@ const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ children }) => {
     const [loading, setLoading] = useState(true);
     const [user,setUser] = useState([]);
-
+    const [error,setError] = useState([]);
 
     // Email Password
     const createUserWithEmailPass = (email, password) => {
@@ -50,6 +50,8 @@ const AuthProvider = ({ children }) => {
         loading,
         googleSignIn,
         user,
+        error,
+        setError
     };
     return (
         <AuthContext.Provider value={authinfo}>

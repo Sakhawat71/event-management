@@ -5,12 +5,13 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import EventDatails from "../pages/EventDatails/EventDatails";
 import Profile from "../pages/Profile/Profile";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 const Router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
-        errorElement: <div></div>,
+        errorElement: <ErrorPage></ErrorPage>,
         children: [
             {
                 path: '/',
