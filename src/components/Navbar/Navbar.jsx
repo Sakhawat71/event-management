@@ -4,20 +4,25 @@ const Navbar = () => {
 
 
     const links = <>
-        <li><NavLink
-            className={({ isActive, isPending }) => isActive ? 'text-blue-600' : isPending ? 'text-black' : ''}
-            to="/"
-        >Home</NavLink></li>
+        <li>
+            <NavLink
+                className={({ isActive, isPending }) => isActive ? 'text-blue-600' : isPending ? 'text-black' : ''}
+                to="/"
+            >Home</NavLink>
+        </li>
 
-        <li><NavLink
-            className={({isActive,isPending})=> isActive ? 'text-blue-600' : isPending ? 'text-black' : '' }
-            to="/login"
-        >Login</NavLink></li>
+        <li>
+            <NavLink
+                className={({ isActive, isPending }) => isActive ? 'text-blue-600' : isPending ? 'text-black' : ''}
+                to="/login"
+            >Login</NavLink>
+        </li>
 
-        <li><NavLink
-            className={({isActive,isPending})=> isActive ? 'text-blue-600' : isPending ? 'text-black' : '' }
-            to="/register"
-        >Register</NavLink></li>
+        <li>
+            <NavLink
+                className={({ isActive, isPending }) => isActive ? 'text-blue-600' : isPending ? 'text-black' : ''}
+                to="/register"
+            >Register</NavLink></li>
     </>
     return (
         <div className="navbar bg-base-100 shadow-lg mb-2 md:px-10">
@@ -53,7 +58,7 @@ const Navbar = () => {
                         <img alt="Tailwind CSS Navbar component" src="" />
                     </div>
                 </label>
-                <a className="btn">Button</a>
+                <Link className="btn">Button</Link>
             </div>
         </div>
     );
