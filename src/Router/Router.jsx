@@ -4,6 +4,7 @@ import Home from "../components/Home/Home";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import EventDatails from "../pages/EventDatails/EventDatails";
+import Profile from "../pages/Profile/Profile";
 
 const Router = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const Router = createBrowserRouter([
                 path: '/event/:id',
                 element: <EventDatails></EventDatails>,
                 loader: ()=> fetch('/event.json')
+            },
+            {
+                path: '/profile',
+                element: <Profile></Profile>,
             }
         ]
     }

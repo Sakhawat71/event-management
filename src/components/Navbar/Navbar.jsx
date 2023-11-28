@@ -10,6 +10,13 @@ const Navbar = () => {
                 to="/"
             >Home</NavLink>
         </li>
+        
+        <li>
+            <NavLink
+                className={({ isActive, isPending }) => isActive ? 'text-blue-600' : isPending ? 'text-black' : ''}
+                to="/profile"
+            >Profile</NavLink>
+        </li>
 
         <li>
             <NavLink
@@ -46,7 +53,7 @@ const Navbar = () => {
                 </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="gap-2 font-semibold text-xl  menu-horizontal px-1">
+                <ul className="gap-2 font-semibold text-[17px] menu-horizontal px-1">
                     {
                         links
                     }

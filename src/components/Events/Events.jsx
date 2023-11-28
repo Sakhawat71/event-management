@@ -8,7 +8,7 @@ const Events = ({ event }) => {
 
     return (
         <div className="card card-compact max-w-md bg-base-100 shadow-xl">
-            <figure className='h-72'>
+            <figure className='lg:h-64'>
                 <img
                     className='h-full w-full'
                     src={image}
