@@ -26,7 +26,6 @@ const Login = () => {
                 navigate(location?.state ? location.state : "/")
             })
             .catch((error) => {
-                console.log(error.code, error.message)
                 setFirebaseError(getCustomErrorMessage(error))
             })
 
