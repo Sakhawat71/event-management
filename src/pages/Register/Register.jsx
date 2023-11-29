@@ -1,4 +1,4 @@
-import { Link, } from "react-router-dom";
+import { Link, useNavigate,  } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa"
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -9,8 +9,9 @@ import { updateProfile } from "firebase/auth";
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState([]);
+    const [firebaseError ,setFirebaseError] = useState([]);
     const { googleSignIn, createUserWithEmailPass, } = useContext(AuthContext);
-
+    const navigate = useNavigate()
 
 
     // Email Password
@@ -26,7 +27,13 @@ const Register = () => {
         console.log(name, photo, email, password)
 
         setError("")
-        if (!/^.{6,}$/.test(password)) {
+        setFirebaseError("")
+
+        if(!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(email)){
+            setError("Please enter a valid email address.")
+            return;
+        }
+        else if (!/^.{6,}$/.test(password)) {
             setError("Password is less than 6 characters")
             return;
         }
@@ -42,8 +49,7 @@ const Register = () => {
         createUserWithEmailPass(email, password)
             .then(result => {
                 const currentUser = result.user;
-                swal("Good job!", "You clicked the button!", "success");
-                setError("")
+                swal("Congratulation!", "Registration completed successfully", "success");
 
                 updateProfile(currentUser,{
                     displayName: name, 
@@ -53,26 +59,23 @@ const Register = () => {
                 
                 })
                 .catch((error)=>{
-                    console.log(error)
+                    setFirebaseError(error.message)
                 })
+                navigate('/');
             })
             .catch(error => {
-                console.error(error)
+                setFirebaseError(error.message)
             })
     }
 
     // sign with google
     const signWithGoogle = () => {
         googleSignIn()
-            .then((result) => {
-                console.log(result)
-                
+            .then(() => {
+                swal("Congratulation!", "Registration completed successfully", "success");
             })
             .catch((error) => {
-                setError(error)
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.error(errorCode, errorMessage)
+                setFirebaseError(error.message)
             })
     }
 
@@ -151,9 +154,12 @@ const Register = () => {
                                 <label htmlFor="agree" className="ml-2">
                                     Agreeing to our <a className="underline text-green-600 cursor-pointer">Terms of Service</a> and <a className="underline text-green-600 cursor-pointer">Privacy Policy</a></label>
                             </div> */}
-                            <span className="text-red-700">
+                            <span className="text-red-700 mt-5">
                                 {
                                     error
+                                }
+                                {
+                                    firebaseError
                                 }
                             </span>
                         </div>
@@ -161,7 +167,7 @@ const Register = () => {
                         <input
                             type="submit"
                             value="Register"
-                            className="btn text-white bg-sky-500 text-[16px]"
+                            className="btn text-white mt-5 bg-sky-500 text-[16px]"
                         />
 
                         {/* <div className="form-control mt-6 mb-2">
