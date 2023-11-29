@@ -73,6 +73,7 @@ const Register = () => {
         googleSignIn()
             .then(() => {
                 swal("Congratulation!", "Registration completed successfully", "success");
+                navigate('/');
             })
             .catch((error) => {
                 setFirebaseError(error.message)
