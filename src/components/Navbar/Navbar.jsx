@@ -11,7 +11,7 @@ const Navbar = () => {
     const handelLogOut = () => {
         logOut()
             .then(() => {
-                swal("Thanks!", "Log Out!", "success");
+                swal("Sign-out successful", "thanks", "success");
             })
             .catch((error) => {
                 console.error(error)
@@ -87,7 +87,6 @@ const Navbar = () => {
 
             <div className="navbar-end">
                 <div>
-                    {/* <p className="w-full">{user?.displayName}</p> */}
                     {
                         user?.displayName
                     }

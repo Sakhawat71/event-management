@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate, } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import { FaEye, FaEyeSlash,  } from "react-icons/fa";
+import { FaEye, FaEyeSlash, } from "react-icons/fa";
 
 
 
@@ -11,24 +11,35 @@ const Login = () => {
     const navigate = useNavigate();
 
     const [showPassword, setShowPassword] = useState(false);
-    const { logInWihtEmailPass } = useContext(AuthContext)
+    const { logInWihtEmailPass } = useContext(AuthContext);
+    const [firebaseError, setFirebaseError] = useState([]);
 
     const handelLogIn = e => {
         e.preventDefault()
-
+        setFirebaseError("")
         const form = new FormData(e.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
 
         logInWihtEmailPass(email, password)
-            .then(()=>{
+            .then(() => {
                 navigate(location?.state ? location.state : "/")
             })
-            .catch((error) =>{
-                console.log(error)
+            .catch((error) => {
+                console.log(error.code, error.message)
+                setFirebaseError(getCustomErrorMessage(error))
             })
+
     }
 
+    const getCustomErrorMessage = (error) => {
+        switch (error.code) {
+            case "auth/invalid-login-credentials":
+                return "Incorrect email/password.Please try again.";
+            default:
+                return error.code;
+        }
+    };
 
     return (
 
@@ -80,6 +91,11 @@ const Login = () => {
                             </label>
                         </div>
 
+                        <span className="text-red-700">
+                            {
+                                firebaseError
+                            }
+                        </span>
 
                         <div className="form-control mt-6 mb-2">
                             <button className="btn btn-primary">Login</button>
