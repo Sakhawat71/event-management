@@ -9,14 +9,14 @@ const PrivateRouter = ({children}) => {
     const {user,loading} = useContext(AuthContext);
 
     if(loading){
-        return <span className="loading loading-bars loading-lg"></span>
+        return <span className="loading flex justify-center mx-auto loading-bars loading-lg"></span>
     }
 
     if(user){
         return children;
     }
 
-    return <Navigate state={location.pathname}></Navigate>
+    return <Navigate state={location.pathname} to="/login"></Navigate>
 };
 
 PrivateRouter.propTypes = {

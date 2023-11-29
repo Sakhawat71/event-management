@@ -6,6 +6,7 @@ import Register from "../pages/Register/Register";
 import EventDatails from "../pages/EventDatails/EventDatails";
 import Profile from "../pages/Profile/Profile";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import PrivateRouter from "./PrivateRouter";
 
 const Router = createBrowserRouter([
     {
@@ -28,12 +29,12 @@ const Router = createBrowserRouter([
             },
             {
                 path: '/event/:id',
-                element: <EventDatails></EventDatails>,
+                element: <PrivateRouter><EventDatails></EventDatails></PrivateRouter>,
                 loader: ()=> fetch('/event.json')
             },
             {
                 path: '/profile',
-                element: <Profile></Profile>,
+                element: <PrivateRouter><Profile></Profile></PrivateRouter>,
             }
         ]
     }

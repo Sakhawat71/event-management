@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa"
 import { useContext, useState } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
@@ -9,10 +9,7 @@ import { updateProfile } from "firebase/auth";
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [error, setError] = useState([]);
-    const { googleSignIn, createUserWithEmailPass, user } = useContext(AuthContext);
-    console.log(user)
-
-
+    const { googleSignIn, createUserWithEmailPass, } = useContext(AuthContext);
 
 
 
@@ -53,7 +50,7 @@ const Register = () => {
                     photoURL: photo
                 })
                 .then(()=>{
-
+                
                 })
                 .catch((error)=>{
                     console.log(error)
@@ -69,6 +66,7 @@ const Register = () => {
         googleSignIn()
             .then((result) => {
                 console.log(result)
+                
             })
             .catch((error) => {
                 setError(error)

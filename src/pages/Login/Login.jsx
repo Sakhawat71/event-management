@@ -1,14 +1,16 @@
-
 import { useContext, useState } from "react";
-import { Link, } from "react-router-dom";
+import { Link, useLocation, useNavigate, } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FaEye, FaEyeSlash,  } from "react-icons/fa";
 
 
 
 const Login = () => {
-    const [showPassword, setShowPassword] = useState(false);
 
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    const [showPassword, setShowPassword] = useState(false);
     const { logInWihtEmailPass } = useContext(AuthContext)
 
     const handelLogIn = e => {
@@ -19,8 +21,12 @@ const Login = () => {
         const password = form.get('password');
 
         logInWihtEmailPass(email, password)
-            .then()
-            .catch()
+            .then(()=>{
+                navigate(location?.state ? location.state : "/")
+            })
+            .catch((error) =>{
+                console.log(error)
+            })
     }
 
 

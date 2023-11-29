@@ -6,16 +6,16 @@ import swal from 'sweetalert';
 
 const Navbar = () => {
 
-    const { user,logOut } = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
 
-    const handelLogOut =()=>{
+    const handelLogOut = () => {
         logOut()
-        .then(() =>{
-            swal("Good job!", "Log Out!", "success");
-        })
-        .catch((error) =>{
-            console.error(error)
-        })
+            .then(() => {
+                swal("Good job!", "Log Out!", "success");
+            })
+            .catch((error) => {
+                console.error(error)
+            })
     }
 
     const links = <>
@@ -29,13 +29,6 @@ const Navbar = () => {
         <li>
             <NavLink
                 className={({ isActive, isPending }) => isActive ? 'text-blue-600' : isPending ? 'text-black' : ''}
-                to="/profile"
-            >Profile</NavLink>
-        </li>
-
-        <li>
-            <NavLink
-                className={({ isActive, isPending }) => isActive ? 'text-blue-600' : isPending ? 'text-black' : ''}
                 to="/login"
             >Login</NavLink>
         </li>
@@ -44,7 +37,18 @@ const Navbar = () => {
             <NavLink
                 className={({ isActive, isPending }) => isActive ? 'text-blue-600' : isPending ? 'text-black' : ''}
                 to="/register"
-            >Register</NavLink></li>
+            >Register</NavLink>
+        </li>
+        {
+            user && <>
+                <li>
+                    <NavLink
+                        className={({ isActive, isPending }) => isActive ? 'text-blue-600' : isPending ? 'text-black' : ''}
+                        to="/profile"
+                    >Profile</NavLink>
+                </li>
+            </>
+        }
     </>
     return (
         <div className="navbar bg-base-100 shadow-lg mb-2 md:px-10">
@@ -81,24 +85,24 @@ const Navbar = () => {
                 </div>
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
-                        <Link to="/profile"><img alt='user' src={ user ? user.photoURL : userlogo } /></Link>
+                        <Link to="/profile"><img alt='user' src={user ? user.photoURL : userlogo} /></Link>
                     </div>
                 </label>
                 {
                     user ?
                         <button
-                        onClick={handelLogOut}
-                        className="btn"
+                            onClick={handelLogOut}
+                            className="btn"
                         >LogOut</button>
                         :
-                        <Link 
-                        to="/login"
+                        <Link
+                            to="/login"
                         >
                             <button className="btn">
                                 LogIn
                             </button>
                         </Link>
-                    }
+                }
 
             </div>
         </div>
