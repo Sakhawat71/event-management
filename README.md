@@ -1,11 +1,12 @@
+## Dream Events
+
 live link: 
+
 https://event-managment-sakhawat71.netlify.app/
 
 
 
-## Dream Events
-
-#### Features 
+### Features 
 
 - Two types of user registration options: Email and password signup and Google signup.
 - User profiles to provide a personalized experience for registered users.
