@@ -18,7 +18,7 @@ console.log(greetign);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: A: `{}`
+#### Answer: A
 
 <i>an empty object {} is assigned to the variable 'greeting'.</i>
 
@@ -43,9 +43,11 @@ sum(1, "2");
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: C: `"12"`
+#### Answer: C
 
-<i>Write your explanation here</i>
+<i>The '+' operator is used for addition. However, when the types of the operands are different, JavaScript performs type coercion to convert one or both operands to a common type. In this case, the number 1 is added to the string "2".
+The result will be the string "12" because the number 1 is concatenated with the string "2".
+</i>
 
 </p>
 </details>
@@ -69,9 +71,9 @@ console.log(food);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: A
 
-<i>Write your explanation here</i>
+<i>The console.log(food) statement will output the original array ['🍕', '🍫', '🥑', '🍔']. The changes to the info object do not affect the original food array.</i>
 
 </p>
 </details>
@@ -94,9 +96,10 @@ console.log(sayHi());
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: B
 
-<i>Write your explanation here</i>
+<i> The console.log(sayHi()) statement will output "Hi there, undefined" because the name parameter inside the function will have the value undefined in this case.
+</i>
 
 </p>
 </details>
@@ -122,9 +125,9 @@ console.log(count);
 <details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: ?
+#### Answer: C
 
-<i>Write your explanation here</i>
+<i> The console.log(count) statement will output 3 because there are three truthy values (1, 2, and 3) in the nums array, and the count variable is incremented for each of them during the iteration. </i>
 
 </p>
 </details>
