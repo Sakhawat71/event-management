@@ -7,6 +7,7 @@ import EventDatails from "../pages/EventDatails/EventDatails";
 import Profile from "../pages/Profile/Profile";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import PrivateRouter from "./PrivateRouter";
+import BookedEvents from "../pages/BookedEvents/BookedEvents";
 
 const Router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ const Router = createBrowserRouter([
             {
                 path: '/profile',
                 element: <PrivateRouter><Profile></Profile></PrivateRouter>,
+            },
+            {
+                path: '/booked_events',
+                element: <PrivateRouter><BookedEvents></BookedEvents></PrivateRouter>
             }
         ]
     }

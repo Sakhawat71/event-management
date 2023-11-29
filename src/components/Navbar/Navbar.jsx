@@ -11,7 +11,7 @@ const Navbar = () => {
     const handelLogOut = () => {
         logOut()
             .then(() => {
-                swal("Good job!", "Log Out!", "success");
+                swal("Thanks!", "Log Out!", "success");
             })
             .catch((error) => {
                 console.error(error)
@@ -47,6 +47,12 @@ const Navbar = () => {
                         to="/profile"
                     >Profile</NavLink>
                 </li>
+                <li>
+                    <NavLink
+                        className={({ isActive, isPending }) => isActive ? 'text-blue-600' : isPending ? 'text-black' : ''}
+                        to="/booked_events"
+                    >Booked Events</NavLink>
+                </li>
             </>
         }
     </>
@@ -81,7 +87,10 @@ const Navbar = () => {
 
             <div className="navbar-end">
                 <div>
-                    <p className="w-full">{user?.displayName}</p>
+                    {/* <p className="w-full">{user?.displayName}</p> */}
+                    {
+                        user?.displayName
+                    }
                 </div>
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                     <div className="w-10 rounded-full">
